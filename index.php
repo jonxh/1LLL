@@ -22,7 +22,7 @@
     <div>
         <?php
   				if (!empty($_GET['p'])) {
-  					$pages_dir= 'p';
+  					$pages_dir= 'pages';
   					$pages = scandir($pages_dir, 0);
   					unset($pages[0], $pages[1]);
 

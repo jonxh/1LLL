@@ -11,14 +11,6 @@
     </tr>
   </table>
     <?php
-      $sql = "SELECT * FROM 1lll ORDER BY id";
-      $qry = mysqli_query($db_conn,$sql);
-      echo "<table>";
-      while ($row = mysqli_fetch_array($qry)) {
-        echo  "<tr><td>" . $row[0] .
-              "</td><td>" . $row[1] .
-              "</td><td>" . $row[2] . "</td></tr>";
-      }
     ?>
   </table>
 </body>

@@ -1,7 +1,6 @@
 <?php
   // Du kan fikse denne fila <333
 
-  // localhost
   $db_servername = "localhost";
   $db_username = "root";
   $db_password = "";
