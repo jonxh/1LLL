@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2018 at 06:52 AM
+-- Generation Time: Apr 23, 2018 at 10:24 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `algs` (
   `alg_id` int(4) NOT NULL,
-  `case_id` int(5) NOT NULL,
+  `case_id2` int(5) NOT NULL,
   `alg` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -38,8 +38,10 @@ CREATE TABLE `algs` (
 -- Dumping data for table `algs`
 --
 
-INSERT INTO `algs` (`alg_id`, `case_id`, `alg`) VALUES
-(1, 1, 'y\' R U\' L U2 R\' U\' R\' F R2 U2 R\' F\' L\'');
+INSERT INTO `algs` (`alg_id`, `case_id2`, `alg`) VALUES
+(1, 1, 'y\' R U\' L U2 R\' U\' R\' F R2 U2 R\' F\' L\''),
+(2, 2, 'F R U R\' U\' F\' U R\' F\' U\' F U R'),
+(3, 3, 'y\' R U\' R2 F R F2 U\' L\' U L U F R U R\'');
 
 -- --------------------------------------------------------
 
@@ -59,7 +61,9 @@ CREATE TABLE `cases` (
 --
 
 INSERT INTO `cases` (`case_id`, `oll`, `cp`, `ep`) VALUES
-(1, '1', 'B', 'H');
+(1, '1', '2', '2'),
+(2, '48', '1', '1'),
+(3, '48', '1', '2');
 
 -- --------------------------------------------------------
 
@@ -77,7 +81,7 @@ CREATE TABLE `oll_view` (
 --
 
 INSERT INTO `oll_view` (`oll_id`, `oll_alg`) VALUES
-(1, 'RUB3RBR2U3R3FRF3'),
+(1, 'RBL3BR2L3F3L3FR2L3B2R3'),
 (2, 'FRUR3U3F3fRUR3U3f3'),
 (3, 'r3R2UR3UrU2r3UR3r'),
 (4, 'r3RU3rU2r3U3RU3R23r'),
@@ -97,11 +101,11 @@ INSERT INTO `oll_view` (`oll_id`, `oll_alg`) VALUES
 (18, 'RU2R2FRF3U2M3URU3r3'),
 (19, 'MURUR3U3M3R3FRF3'),
 (20, 'MURUR3U3M2URU3r3'),
-(21, 'RU2R3U3RUR3U3RU3R3'),
+(21, 'URU2R3U3RUR3U3RU3R3'),
 (22, 'RU2R2U3R2U3R2U2R'),
-(23, 'R2DR3U2RD3R3U2R3'),
+(23, 'U2R2DR3U2RD3R3U2R3'),
 (24, 'LFR3F3L3FRF3'),
-(25, 'R3FRB3R3F3RB'),
+(25, 'U2R3FRB3R3F3RB'),
 (26, 'RUR3URU2R3'),
 (27, 'L3U3LU3L3U2L'),
 (28, 'RFD2L2U2BL2D2R'),
@@ -111,7 +115,7 @@ INSERT INTO `oll_view` (`oll_id`, `oll_alg`) VALUES
 (32, 'UFUR3U3F3UFRF3'),
 (33, 'UFUF3U3F3LFL3'),
 (34, 'RUR3U3y3r3U3RUM3'),
-(35, 'UFU2F2LFL3FU2F3'),
+(35, 'yB3RBUb3RbR2U3R3FR3F3'),
 (36, 'U3FU2F2L2BL3FL2B3L'),
 (37, 'ULF3L3FUFU3F3'),
 (38, 'U2RU2R2F2LFL3F2RF3'),
@@ -133,7 +137,8 @@ INSERT INTO `oll_view` (`oll_id`, `oll_alg`) VALUES
 (54, 'U3FR3F3RU2F2LFL3F'),
 (55, 'URU2R2U3RU3R3U2FRF3'),
 (56, 'RBLB3R2BUL3U3B3R'),
-(57, 'RUR3U3R3LFRF3L3');
+(57, 'RUR3U3R3LFRF3L3'),
+(58, '');
 
 --
 -- Indexes for dumped tables
@@ -165,19 +170,19 @@ ALTER TABLE `oll_view`
 -- AUTO_INCREMENT for table `algs`
 --
 ALTER TABLE `algs`
-  MODIFY `alg_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `alg_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `cases`
 --
 ALTER TABLE `cases`
-  MODIFY `case_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `case_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `oll_view`
 --
 ALTER TABLE `oll_view`
-  MODIFY `oll_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `oll_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
