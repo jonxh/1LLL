@@ -1,22 +1,28 @@
 <head>
   <title>Insert alg</title>
 </head>
-<?php
 
-  $insert_oll = $_POST['insert_oll'];
-  $insert_cp = $_POST['insert_cp'];
-  $insert_ep = $_POST['insert_ep'];
-  $insert_alg = $_POST['insert_alg'];
+<body>
+  <?php
 
-  $sqlinsert = "INSERT INTO cases (case_oll, case_cp, case_ep, case_alg) VALUES (`$insert_oll`, `$insert_cp`, `$insert_ep`,`$insert_alg`)";
-  if (mysqli_query($db_conn, $sqlinsert))
-  {
-      echo "You <a style=\"color:green;\">successfully added</a> " . $insert_alg . " (" . $insert_oll . "-" . $insert_cp . "-" . $insert_ep . ")";
-  }
-    else
-  {
-    echo "<a style=\"color:red;\">Unnsuccesful</a>, sorry.<br>";
-    die("Failed to insert - " . $insert_alg . " (" . $insert_oll . "-" . $insert_cp . "-" . $insert_ep . ")<br><br> Error: " . mysqli_error($db_conn));
-  }
+      $insert_oll = $_POST['insert_oll'];
+      $insert_cp = $_POST['insert_cp'];
+      $insert_ep = $_POST['insert_ep'];
+      $insert_alg = mysqli_real_escape_string($db_conn, $_POST['insert_alg']);
 
-?>
+      $column_name = "case_alg" . $insert_ep;
+
+      $sqlinsert = "UPDATE cases SET $column_name = '$insert_alg' WHERE case_oll = $insert_oll AND case_cp = $insert_cp";
+
+      if (mysqli_query($db_conn, $sqlinsert))
+      {
+          echo "<a style=\"color:green;\">successfully</a> added " . $insert_alg . " (" . $insert_oll . "-" . $insert_cp . "-" . $insert_ep . ")";
+      }
+        else
+      {
+        echo "<a style=\"color:red;\">Unnsuccesful</a>, sorry.<br>";
+        die("Failed to insert - " . $insert_alg . " (" . $insert_oll . "-" . $insert_cp . "-" . $insert_ep . ")<br><br> Error: " . mysqli_error($db_conn));
+      }
+
+  ?>
+</body>

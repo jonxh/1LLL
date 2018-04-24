@@ -1,5 +1,5 @@
 <head>
-  <title>1LLL Algs</title>
+  <title>1LLL <?php //echo $_GET['oll'] . "-" . $_GET['cp'] . "-" . $_GET['ep'] ?></title>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
     {
 
       $oll_get = $_GET['oll'];
-      if ($oll_get == 1 or $oll_get == 21 or $oll_get == 55 or $oll_get == 56 or $oll_get == 56 or $oll_get == 57)
+      if ($oll_get == 1 or $oll_get == 21 or $oll_get == 55 or $oll_get == 56 or $oll_get == 57)
       {
         cp_view2();
       } elseif ($oll_get == 20 or $oll_get == 58) {
