@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="javascript/header.js"></script>
+    <script src="functions/header.js"></script>
   </head>
   <body>
     <div class="header">
@@ -38,7 +38,7 @@
   					}
   				} else {
   					$pages_dir= 'pages';
-  					include ($pages_dir .'/home.inc.php');
+  					include ($pages_dir .'/menu.inc.php');
   				}
   			?>
     <div>

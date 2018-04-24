@@ -1,7 +1,7 @@
 <head>
-  <title>Home</title>
+  <title>Info</title>
 </head>
 
 <body>
-  There are a lot of algs oh boy
+
 </body>
