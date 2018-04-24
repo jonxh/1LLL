@@ -16,11 +16,11 @@
 
       if (mysqli_query($db_conn, $sqlinsert))
       {
-          echo "<a style=\"color:green;\">successfully</a> added " . $insert_alg . " (" . $insert_oll . "-" . $insert_cp . "-" . $insert_ep . ")";
+          echo "<a style=\"color:green;\">Successful</a><br>" . $insert_alg . " (" . $insert_oll . "-" . $insert_cp . "-" . $insert_ep . ")";
       }
         else
       {
-        echo "<a style=\"color:red;\">Unnsuccesful</a>, sorry.<br>";
+        echo "<a style=\"color:red;\">Unnsuccesful</a><br>";
         die("Failed to insert - " . $insert_alg . " (" . $insert_oll . "-" . $insert_cp . "-" . $insert_ep . ")<br><br> Error: " . mysqli_error($db_conn));
       }
 
