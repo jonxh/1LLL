@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2018 at 10:24 AM
+-- Generation Time: Apr 24, 2018 at 09:49 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -25,23 +25,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `algs`
+-- Table structure for table `alt_algs`
 --
 
-CREATE TABLE `algs` (
-  `alg_id` int(4) NOT NULL,
-  `case_id2` int(5) NOT NULL,
-  `alg` varchar(256) NOT NULL
+CREATE TABLE `alt_algs` (
+  `alt_id` int(11) NOT NULL,
+  `alt_oll` int(2) NOT NULL,
+  `alt_cp` int(2) NOT NULL,
+  `alt_ep` int(2) NOT NULL,
+  `alt_alg1` varchar(256) DEFAULT NULL,
+  `alt_alg2` varchar(256) DEFAULT NULL,
+  `alt_alg3` varchar(256) DEFAULT NULL,
+  `alt_alg4` varchar(256) DEFAULT NULL,
+  `alt_alg5` varchar(256) DEFAULT NULL,
+  `alt_alg6` varchar(256) DEFAULT NULL,
+  `alt_alg7` varchar(256) DEFAULT NULL,
+  `alt_alg8` varchar(256) DEFAULT NULL,
+  `alt_alg9` varchar(256) DEFAULT NULL,
+  `alt_alg10` varchar(256) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `algs`
+-- Dumping data for table `alt_algs`
 --
 
-INSERT INTO `algs` (`alg_id`, `case_id2`, `alg`) VALUES
-(1, 1, 'y\' R U\' L U2 R\' U\' R\' F R2 U2 R\' F\' L\''),
-(2, 2, 'F R U R\' U\' F\' U R\' F\' U\' F U R'),
-(3, 3, 'y\' R U\' R2 F R F2 U\' L\' U L U F R U R\'');
+INSERT INTO `alt_algs` (`alt_id`, `alt_oll`, `alt_cp`, `alt_ep`, `alt_alg1`, `alt_alg2`, `alt_alg3`, `alt_alg4`, `alt_alg5`, `alt_alg6`, `alt_alg7`, `alt_alg8`, `alt_alg9`, `alt_alg10`) VALUES
+(1, 1, 4, 10, 'R U2 R\' U\' F\' U F U R U\' B U\' B\' R\'', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -51,19 +60,25 @@ INSERT INTO `algs` (`alg_id`, `case_id2`, `alg`) VALUES
 
 CREATE TABLE `cases` (
   `case_id` int(10) NOT NULL,
-  `oll` varchar(256) NOT NULL,
-  `cp` varchar(256) NOT NULL,
-  `ep` varchar(256) NOT NULL
+  `case_oll` int(2) NOT NULL,
+  `case_cp` int(2) NOT NULL,
+  `case_ep` int(2) NOT NULL,
+  `case_alg` varchar(256) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `cases`
 --
 
-INSERT INTO `cases` (`case_id`, `oll`, `cp`, `ep`) VALUES
-(1, '1', '2', '2'),
-(2, '48', '1', '1'),
-(3, '48', '1', '2');
+INSERT INTO `cases` (`case_id`, `case_oll`, `case_cp`, `case_ep`, `case_alg`) VALUES
+(1, 1, 4, 1, 'L F U\' R U\' R\' U R U R\' U2 y\' R\' U\' F\''),
+(2, 48, 1, 1, 'F R U R\' U\' F\' U R\' F\' U\' F U R'),
+(3, 48, 1, 2, 'y\' R U\' R2 F R F2 U\' L\' U L U F R U R\''),
+(4, 48, 1, 3, 'R U2 R\' U\' R U\' R2 F\' r U\' r\' F2 R'),
+(5, 1, 4, 10, 'F U R U2 R\' U\' R U2 R2 F R F\' U\' F\''),
+(6, 1, 4, 2, 'y\' R U\' L U2 R\' U\' R\' F R2 U2 R\' F\' L\''),
+(7, 48, 1, 5, 'R\' U\' R U\' R\' U2 F\' U L\' U\' L U\' F U R'),
+(8, 48, 1, 4, 'R U2 R2 D\' F2 D F R2 U2 R2 F r U2 M');
 
 -- --------------------------------------------------------
 
@@ -145,10 +160,10 @@ INSERT INTO `oll_view` (`oll_id`, `oll_alg`) VALUES
 --
 
 --
--- Indexes for table `algs`
+-- Indexes for table `alt_algs`
 --
-ALTER TABLE `algs`
-  ADD PRIMARY KEY (`alg_id`);
+ALTER TABLE `alt_algs`
+  ADD PRIMARY KEY (`alt_id`);
 
 --
 -- Indexes for table `cases`
@@ -167,16 +182,16 @@ ALTER TABLE `oll_view`
 --
 
 --
--- AUTO_INCREMENT for table `algs`
+-- AUTO_INCREMENT for table `alt_algs`
 --
-ALTER TABLE `algs`
-  MODIFY `alg_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `alt_algs`
+  MODIFY `alt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `cases`
 --
 ALTER TABLE `cases`
-  MODIFY `case_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `case_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `oll_view`
