@@ -5,6 +5,7 @@ To do:
 - Add Insert feature to alg_view.
 - Add Delete function to alg_view.
 - Add Update function to alg_view.
+- Add Sorting option in oll_view.
 
 - Make things prettier
   - oll_view
