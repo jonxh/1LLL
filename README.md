@@ -1,8 +1,10 @@
-# 1LLL version 1.0
-README created and version numbering 26.04.2018
+# Project 1LLL - version 1.0
+Version numbering started 26.04.2018 03:17am
 
 To do:
 - Add Insert feature to alg_view.
+- Add Delete function to alg_view.
+- Add Update function to alg_view.
 
 - Make things prettier
   - oll_view
@@ -12,4 +14,5 @@ To do:
 
 Finished:
 
+- Removed Herobrine?
 - Change all OLL algs to fit CP arrows.
