@@ -11,11 +11,6 @@ To do:
   - CO
   - Image size
 - Add dynamic title.
-- Make things prettier.
-  - oll_view
-  - cp_ view
-  - ep_view
-  - alg_view
 - Add Easier navigation
 Finished:
 
