@@ -9,9 +9,8 @@ To do:
   - ID
   - EO
   - CO
-  - ..
+  - Image size
 - Add dynamic title.
-
 - Make things prettier
   - oll_view
   - cp_ view
