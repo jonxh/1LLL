@@ -6,6 +6,10 @@ To do:
 - Add Delete function to alg_view.
 - Add Update function to alg_view.
 - Add Sorting option in oll_view.
+  - ID
+  - EO
+  - CO
+  - ..
 - Add dynamic title.
 
 - Make things prettier
