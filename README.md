@@ -1,4 +1,4 @@
-# Project 1LLL - version 1.0
+# Project 1LLL - version 1.1
 Version numbering started 26.04.2018 03:17am
 
 To do:
@@ -12,7 +12,10 @@ To do:
   - Image size
 - Add dynamic title.
 - Add Easier navigation
-Finished:
 
-- Removed Herobrine?
-- Change all OLL algs to fit CP arrows.
+
+CHANGELOG:
+
+v1.1
+
+- Nicer looks!
