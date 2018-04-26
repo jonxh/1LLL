@@ -19,3 +19,4 @@ CHANGELOG:
 v1.1
 
 - Nicer looks!
+- Other stuff
