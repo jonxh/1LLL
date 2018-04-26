@@ -1,5 +1,5 @@
-# 1LLL
-README created 26.04.2018
+# 1LLL version 1.0
+README created and version numbering 26.04.2018
 
 To do:
 - Add Insert feature to alg_view.
