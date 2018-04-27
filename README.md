@@ -16,6 +16,7 @@ TODO:
 ---
 
 CHANGELOG:
+
 v1.2
 
 - Added Insert feature to alg_view.
@@ -25,6 +26,3 @@ v1.1
 
 - Nicer looks!
 - Other stuff
-
-
----
