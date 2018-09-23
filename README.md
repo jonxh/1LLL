@@ -5,8 +5,8 @@ Started 26.04.2018 03:17am.
 
 TODO:
 
-- Make OLL view nicer.
-- Add dynamic title.
+- Make OLL view nicer. [x]
+- Add dynamic title. [x]
 - Make navigation easier.
 - Figure out alt algs
 
