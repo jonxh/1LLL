@@ -1,28 +1,30 @@
-# Project 1LLL - version 1.1
-Version numbering started 26.04.2018 03:17am.
+# Project 1LLL - version 3.12
+Started 26.04.2018 03:17am.
 
 ---
 
 TODO:
 
-- Add Sorting option in oll_view.
-  - ID
-  - EO
-  - CO
-  - Image size
+- Make OLL view nicer.
 - Add dynamic title.
-- Add Easier navigation
+- Make navigation easier.
+- Figure out alt algs
 
 ---
 
 CHANGELOG:
 
-v1.2
+v3.12
+
+- Took a step back (hence v3.2 -> 3.12), started actually using php functions, good idea Jon.
+- New ideas, fresh mind.
+
+v3.2
 
 - Added Insert feature to alg_view.
 - Added Delete function to alg_view.
 
-v1.1
+v3.1
 
 - Nicer looks!
 - Other stuff
