@@ -10,6 +10,7 @@ TODO:
 - Make navigation easier. [x]
 - Figure out alt algs [x]
   - Redo Database...
+- Add administration for alg inserts
 
 ---
 
