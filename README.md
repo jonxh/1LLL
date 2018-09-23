@@ -1,5 +1,5 @@
-# Project 1LLL - version 1.1
-Version numbering started 26.04.2018 03:17am.
+# Project 1LLL - version 1.2
+Started 26.04.2018 03:17am.
 
 ---
 
