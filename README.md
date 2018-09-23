@@ -7,8 +7,9 @@ TODO:
 
 - Make OLL view nicer. [x]
 - Add dynamic title. [x]
-- Make navigation easier.
-- Figure out alt algs
+- Make navigation easier. [x]
+- Figure out alt algs [x]
+  - Redo Database...
 
 ---
 
