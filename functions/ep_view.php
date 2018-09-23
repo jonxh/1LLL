@@ -1,252 +1,42 @@
 <?php
 function epView() {
-  include "db.php";
-    $get_oll = $_GET['oll'];
-    $get_cp = $_GET['cp'];
-
-    $sql = "SELECT * FROM cases WHERE case_oll = $get_oll AND case_cp = $get_cp";
-    $qry = mysqli_query($db_conn,$sql) or die("Error: " . mysqli_error($db_conn));
-    $row = mysqli_fetch_array($qry);
-
-      // 1st case
-    if ($row[3] ==! NULL)
-    {
-      echo "<a href=\"index.php?p=menu&oll=" . $get_oll . "&cp=" . $get_cp . "&ep=1\"><img src=\"visualcube/visualcube.php?fmt=svg&size=100&bg=t&view=plan&case=" . $row[3] . "\"></a><br>";
-      echo $row[3] . "<br>";
+  function epViewCases($epCount) {
+    include "db.php";
+      $get_oll = $_GET['oll'];
+      $get_cp = $_GET['cp'];
+        // setting up database algs
+      $sql = "SELECT * FROM cases WHERE case_oll = $get_oll AND case_cp = $get_cp";
+      $qry = mysqli_query($db_conn,$sql) or die("Error: " . mysqli_error($db_conn));
+      $row = mysqli_fetch_array($qry);
+        // setting up database arrows
+      $sql2 = "SELECT * FROM arw_view WHERE arw_id = 1";
+      $qry2 = mysqli_query($db_conn2,$sql2) or die("Error: " . mysqli_error($db_conn2));
+      $row2 = mysqli_fetch_array($qry2);
+      // if there are algs in db
+    if ($row[2+$epCount] ==! NULL) { ?>
+        <table class="epTable"><tr>
+          <td><img src="visualcube/visualcube.php?fmt=svg&size=75&bg=t&stage=f2l&view=plan&arw=<?php echo $row2[$epCount]; ?>"></td>
+          <td><a href="index.php?p=menu&oll=<?php echo $get_oll; ?>&cp=<?php echo $get_cp; ?>&ep=<?php echo $epCount ?>">
+          <img src="visualcube/visualcube.php?fmt=svg&size=100&bg=t&view=plan&case=<?php echo $row[2+$epCount]; ?>"></a></td>
+          <td class="epAlg"><?php echo $row[2+$epCount]; ?></td></tr></table><?php
     }
-    else if ($row[3] == NULL)
-    {
-
-      ?>
-        <form action="index.php?p=insert" method="post">
-          <select name="insert_oll"><option value="<?php echo $_GET['oll']; ?>"><?php echo $_GET['oll']; ?></option></select>
-          <select name="insert_cp"><option value="<?php echo $_GET['cp']; ?>"><?php echo $_GET['cp']; ?></option></select>
-          <select name="insert_ep"><option value="1">1</option></select>
-          <input type="text" placeholder="Algorithm" name="insert_alg">
-          <input type="submit" value="Insert" onclick="return confirm('Are you sure you want to insert this algorithm?');">
-        </form>
+      // if there are no algs in db
+    else if ($row[2+$epCount] == NULL) { ?>
+        <table class="epTable"><tr>
+          <td><img src="visualcube/visualcube.php?fmt=svg&size=75&bg=t&stage=f2l&view=plan&arw=<?php echo $row2[$epCount]; ?>"></td>
+          <td><a href="index.php?p=menu&oll=<?php echo $get_oll; ?>&cp=<?php echo $get_cp; ?>&ep=<?php echo $epCount; ?>">
+          <img src="visualcube/visualcube.php?fmt=svg&size=100&bg=t&view=plan&stage=f2l"></a></td>
+          <td><form action="index.php?p=insert" method="post">
+            <select name="insert_oll"><option value="<?php echo $_GET['oll']; ?>"><?php echo $_GET['oll']; ?></option></select>
+            <select name="insert_cp"><option value="<?php echo $_GET['cp']; ?>"><?php echo $_GET['cp']; ?></option></select>
+            <select name="insert_ep"><option value="<?php $epCount ?>"><?php $epCount ?></option></select><input type="text" placeholder="Algorithm.." name="insert_alg">
+            <input type="submit" value="+" onclick="return confirm('Are you sure you want to insert this algorithm?');">
+          </form></td></tr></table>
       <?php
     }
-
-      // 2nd Case
-    if ($row[4] ==! NULL)
-    {
-      echo "<a href=\"index.php?p=menu&oll=" . $get_oll . "&cp=" . $get_cp . "&ep=2\"><img src=\"visualcube/visualcube.php?fmt=svg&size=100&bg=t&view=plan&case=" . $row[4] . "\"></a><br>";
-      echo $row[4] . "<br>";
-    }
-    else if ($row[4] == NULL)
-    {
-
-      ?>
-        <form action="index.php?p=insert" method="post">
-          <select name="insert_oll"><option value="<?php echo $_GET['oll']; ?>"><?php echo $_GET['oll']; ?></option></select>
-          <select name="insert_cp"><option value="<?php echo $_GET['cp']; ?>"><?php echo $_GET['cp']; ?></option></select>
-          <select name="insert_ep"><option value="2">2</option></select>
-          <input type="text" placeholder="Algorithm" name="insert_alg">
-          <input type="submit" value="Insert" onclick="return confirm('Are you sure you want to insert this algorithm?');">
-        </form>
-      <?php
-    }
-
-      // 3rd Case
-    if ($row[5] ==! NULL)
-    {
-      echo "<a href=\"index.php?p=menu&oll=" . $get_oll . "&cp=" . $get_cp . "&ep=3\"><img src=\"visualcube/visualcube.php?fmt=svg&size=100&bg=t&view=plan&case=" . $row[5] . "\"></a><br>";
-      echo $row[5] . "<br>";
-    }
-    else if ($row[5] == NULL)
-    {
-
-      ?>
-        <form action="index.php?p=insert" method="post">
-          <select name="insert_oll"><option value="<?php echo $_GET['oll']; ?>"><?php echo $_GET['oll']; ?></option></select>
-          <select name="insert_cp"><option value="<?php echo $_GET['cp']; ?>"><?php echo $_GET['cp']; ?></option></select>
-          <select name="insert_ep"><option value="3">3</option></select>
-          <input type="text" placeholder="Algorithm" name="insert_alg">
-          <input type="submit" value="Insert" onclick="return confirm('Are you sure you want to insert this algorithm?');">
-        </form>
-      <?php
-    }
-
-      // 4th Case
-    if ($row[6] ==! NULL)
-    {
-      echo "<a href=\"index.php?p=menu&oll=" . $get_oll . "&cp=" . $get_cp . "&ep=4\"><img src=\"visualcube/visualcube.php?fmt=svg&size=100&bg=t&view=plan&case=" . $row[6] . "\"></a><br>";
-      echo $row[6] . "<br>";
-    }
-    else if ($row[6] == NULL)
-    {
-
-      ?>
-        <form action="index.php?p=insert" method="post">
-          <select name="insert_oll"><option value="<?php echo $_GET['oll']; ?>"><?php echo $_GET['oll']; ?></option></select>
-          <select name="insert_cp"><option value="<?php echo $_GET['cp']; ?>"><?php echo $_GET['cp']; ?></option></select>
-          <select name="insert_ep"><option value="4">4</option></select>
-          <input type="text" placeholder="Algorithm" name="insert_alg">
-          <input type="submit" value="Insert" onclick="return confirm('Are you sure you want to insert this algorithm?');">
-        </form>
-      <?php
-    }
-
-      // 5th Case
-    if ($row[7] ==! NULL)
-    {
-      echo "<a href=\"index.php?p=menu&oll=" . $get_oll . "&cp=" . $get_cp . "&ep=5\"><img src=\"visualcube/visualcube.php?fmt=svg&size=100&bg=t&view=plan&case=" . $row[7] . "\"></a><br>";
-      echo $row[7] . "<br>";
-    }
-    else if ($row[7] == NULL)
-    {
-
-      ?>
-        <form action="index.php?p=insert" method="post">
-          <select name="insert_oll"><option value="<?php echo $_GET['oll']; ?>"><?php echo $_GET['oll']; ?></option></select>
-          <select name="insert_cp"><option value="<?php echo $_GET['cp']; ?>"><?php echo $_GET['cp']; ?></option></select>
-          <select name="insert_ep"><option value="5">5</option></select>
-          <input type="text" placeholder="Algorithm" name="insert_alg">
-          <input type="submit" value="Insert" onclick="return confirm('Are you sure you want to insert this algorithm?');">
-        </form>
-      <?php
-    }
-
-      // 6th Case
-    if ($row[8] ==! NULL)
-    {
-      echo "<a href=\"index.php?p=menu&oll=" . $get_oll . "&cp=" . $get_cp . "&ep=6\"><img src=\"visualcube/visualcube.php?fmt=svg&size=100&bg=t&view=plan&case=" . $row[8] . "\"></a><br>";
-      echo $row[8] . "<br>";
-    }
-    else if ($row[8] == NULL)
-    {
-
-      ?>
-        <form action="index.php?p=insert" method="post">
-          <select name="insert_oll"><option value="<?php echo $_GET['oll']; ?>"><?php echo $_GET['oll']; ?></option></select>
-          <select name="insert_cp"><option value="<?php echo $_GET['cp']; ?>"><?php echo $_GET['cp']; ?></option></select>
-          <select name="insert_ep"><option value="6">6</option></select>
-          <input type="text" placeholder="Algorithm" name="insert_alg">
-          <input type="submit" value="Insert" onclick="return confirm('Are you sure you want to insert this algorithm?');">
-        </form>
-      <?php
-    }
-
-      // 7th Case
-    if ($row[9] ==! NULL)
-    {
-      echo "<a href=\"index.php?p=menu&oll=" . $get_oll . "&cp=" . $get_cp . "&ep=7\"><img src=\"visualcube/visualcube.php?fmt=svg&size=100&bg=t&view=plan&case=" . $row[9] . "\"></a><br>";
-      echo $row[9] . "<br>";
-    }
-    else if ($row[9] == NULL)
-    {
-
-      ?>
-        <form action="index.php?p=insert" method="post">
-          <select name="insert_oll"><option value="<?php echo $_GET['oll']; ?>"><?php echo $_GET['oll']; ?></option></select>
-          <select name="insert_cp"><option value="<?php echo $_GET['cp']; ?>"><?php echo $_GET['cp']; ?></option></select>
-          <select name="insert_ep"><option value="7">7</option></select>
-          <input type="text" placeholder="Algorithm" name="insert_alg">
-          <input type="submit" value="Insert" onclick="return confirm('Are you sure you want to insert this algorithm?');">
-        </form>
-      <?php
-    }
-
-      // 8th Case
-    if ($row[10] ==! NULL)
-    {
-      echo "<a href=\"index.php?p=menu&oll=" . $get_oll . "&cp=" . $get_cp . "&ep=8\"><img src=\"visualcube/visualcube.php?fmt=svg&size=100&bg=t&view=plan&case=" . $row[10] . "\"></a><br>";
-      echo $row[10] . "<br>";
-    }
-    else if ($row[10] == NULL)
-    {
-
-      ?>
-        <form action="index.php?p=insert" method="post">
-          <select name="insert_oll"><option value="<?php echo $_GET['oll']; ?>"><?php echo $_GET['oll']; ?></option></select>
-          <select name="insert_cp"><option value="<?php echo $_GET['cp']; ?>"><?php echo $_GET['cp']; ?></option></select>
-          <select name="insert_ep"><option value="8">8</option></select>
-          <input type="text" placeholder="Algorithm" name="insert_alg">
-          <input type="submit" value="Insert" onclick="return confirm('Are you sure you want to insert this algorithm?');">
-        </form>
-      <?php
-    }
-
-      // 9th Case
-    if ($row[11] ==! NULL)
-    {
-      echo "<a href=\"index.php?p=menu&oll=" . $get_oll . "&cp=" . $get_cp . "&ep=9\"><img src=\"visualcube/visualcube.php?fmt=svg&size=100&bg=t&view=plan&case=" . $row[11] . "\"></a><br>";
-      echo $row[11] . "<br>";
-    }
-    else if ($row[11] == NULL)
-    {
-
-      ?>
-        <form action="index.php?p=insert" method="post">
-          <select name="insert_oll"><option value="<?php echo $_GET['oll']; ?>"><?php echo $_GET['oll']; ?></option></select>
-          <select name="insert_cp"><option value="<?php echo $_GET['cp']; ?>"><?php echo $_GET['cp']; ?></option></select>
-          <select name="insert_ep"><option value="9">9</option></select>
-          <input type="text" placeholder="Algorithm" name="insert_alg">
-          <input type="submit" value="Insert" onclick="return confirm('Are you sure you want to insert this algorithm?');">
-        </form>
-      <?php
-    }
-
-      // 10th Case
-    if ($row[12] ==! NULL)
-    {
-      echo "<a href=\"index.php?p=menu&oll=" . $get_oll . "&cp=" . $get_cp . "&ep=10\"><img src=\"visualcube/visualcube.php?fmt=svg&size=100&bg=t&view=plan&case=" . $row[12] . "\"></a><br>";
-      echo $row[12] . "<br>";
-    }
-    else if ($row[12] == NULL)
-    {
-
-      ?>
-        <form action="index.php?p=insert" method="post">
-          <select name="insert_oll"><option value="<?php echo $_GET['oll']; ?>"><?php echo $_GET['oll']; ?></option></select>
-          <select name="insert_cp"><option value="<?php echo $_GET['cp']; ?>"><?php echo $_GET['cp']; ?></option></select>
-          <select name="insert_ep"><option value="10">10</option></select>
-          <input type="text" placeholder="Algorithm" name="insert_alg">
-          <input type="submit" value="Insert" onclick="return confirm('Are you sure you want to insert this algorithm?');">
-        </form>
-      <?php
-    }
-
-      // 11th Case
-    if ($row[13] ==! NULL)
-    {
-      echo "<a href=\"index.php?p=menu&oll=" . $get_oll . "&cp=" . $get_cp . "&ep=11\"><img src=\"visualcube/visualcube.php?fmt=svg&size=100&bg=t&view=plan&case=" . $row[13] . "\"></a><br>";
-      echo $row[13] . "<br>";
-    }
-    else if ($row[13] == NULL)
-    {
-
-      ?>
-        <form action="index.php?p=insert" method="post">
-          <select name="insert_oll"><option value="<?php echo $_GET['oll']; ?>"><?php echo $_GET['oll']; ?></option></select>
-          <select name="insert_cp"><option value="<?php echo $_GET['cp']; ?>"><?php echo $_GET['cp']; ?></option></select>
-          <select name="insert_ep"><option value="11">11</option></select>
-          <input type="text" placeholder="Algorithm" name="insert_alg">
-          <input type="submit" value="Insert" onclick="return confirm('Are you sure you want to insert this algorithm?');">
-        </form>
-      <?php
-    }
-
-      // 12th Case
-    if ($row[14] ==! NULL)
-    {
-      echo "<a href=\"index.php?p=menu&oll=" . $get_oll . "&cp=" . $get_cp . "&ep=12\"><img src=\"visualcube/visualcube.php?fmt=svg&size=100&bg=t&view=plan&case=" . $row[14] . "\"></a><br>";
-      echo $row[14] . "<br>";
-    }
-    else if ($row[14] == NULL)
-    {
-
-      ?>
-        <form action="index.php?p=insert" method="post">
-          <select name="insert_oll"><option value="<?php echo $_GET['oll']; ?>"><?php echo $_GET['oll']; ?></option></select>
-          <select name="insert_cp"><option value="<?php echo $_GET['cp']; ?>"><?php echo $_GET['cp']; ?></option></select>
-          <select name="insert_ep"><option value="12">12</option></select>
-          <input type="text" placeholder="Algorithm" name="insert_alg">
-          <input type="submit" value="Insert" onclick="return confirm('Are you sure you want to insert this algorithm?');">
-        </form>
-      <?php
-    }
+  }
+      // return all ep cases
+    return epViewCases(1) . epViewCases(2) . epViewCases(3) . epViewCases(4) . epViewCases(5) . epViewCases(6) . epViewCases(7) . epViewCases(8) . epViewCases(9) . epViewCases(10) . epViewCases(11) . epViewCases(12);
   }
 
 ?>

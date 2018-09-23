@@ -7,7 +7,7 @@ function ollView()
     $qry = mysqli_query($db_conn,$sql) or die("Error: " . mysqli_error($db_conn));
     while ($row = mysqli_fetch_array($qry))
     {
-      echo "<a href=\"index.php?p=menu&oll=" . $row[0] . "\"><img src=\"visualcube/visualcube.php?fmt=svg&stage=oll&size=100&bg=t&view=plan&case=" . $row[1] . "\"></a>" . $row[0];
+      echo "<a href=\"index.php?p=menu&oll=" . $row[0] . "\"><img src=\"visualcube/visualcube.php?fmt=svg&stage=oll&size=100&bg=t&view=plan&case=" . $row[1] . "\"></a>";
     }
 }
 ?>
