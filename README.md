@@ -5,8 +5,9 @@ Started 26.04.2018 03:17am.
 
 TODO:
 
-
-- Add administration for alg inserts
+- Add different epView layout for OLL (1, 21, 55, 56, 57 / 20, 58)
+- Improve insertion and deletion of algs.
+- Add administration for alg inserts.
 
 ---
 
