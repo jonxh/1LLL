@@ -1,20 +1,23 @@
-# Project 1LLL - version 3.12
+# Project 1LLL - version 3.2_1
 Started 26.04.2018 03:17am.
 
 ---
 
 TODO:
 
-- Make OLL view nicer. [x]
-- Add dynamic title. [x]
-- Make navigation easier. [x]
-- Figure out alt algs [x]
-  - Redo Database...
+
 - Add administration for alg inserts
 
 ---
 
 CHANGELOG:
+
+v3.2_1 - The actual v3.2 (24/09/18)
+
+- Cooler header, work in progress though.
+- Made OLL view look nicer.
+- Added dynamic title.
+- New database layout from scratch, easier with alternative algs.
 
 v3.12
 
