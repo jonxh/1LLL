@@ -1,8 +1,12 @@
-<?php include "db.php"; ?>
+<?php
+  include "db.php";
+  include "functions/functions.php";
+?>
 
 <!DOCTYPE html>
 <html>
   <head>
+    <?php echo titleFunction(); ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -11,10 +15,9 @@
   </head>
   <body>
     <div id="header">
-      <a href="index.php" style="font-size:30px;">1LLL Algorithms</a><br>
+      <a href="index.php">ONE3L</a>
     </div>
-    <hr>
-    <div>
+    <div id="content">
       <?php
   			if (!empty($_GET['p'])) {
   				$pages_dir= 'pages';

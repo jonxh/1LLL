@@ -4,24 +4,22 @@
 
 <body>
   <?php
+    include "db.php";
+    $i_oll = mysqli_real_escape_string($conn, $_POST['insert_oll']);
+    $i_cp = mysqli_real_escape_string($conn, $_POST['insert_cp']);
+    $i_ep = mysqli_real_escape_string($conn, $_POST['insert_ep']);
+    $i_alg = mysqli_real_escape_string($conn, $_POST['insert_alg']);
 
-      $insert_oll = $_POST['insert_oll'];
-      $insert_cp = $_POST['insert_cp'];
-      $insert_ep = $_POST['insert_ep'];
-      $insert_alg = mysqli_real_escape_string($db_conn, $_POST['insert_alg']);
-      $column_name = "case_alg" . $insert_ep;
+    $sqlinsert = "INSERT INTO algs (alg_oll, alg_cp, alg_ep, alg) VALUES ('$i_oll', '$i_cp', '$i_ep', '$i_alg')";
 
-      $sqlupdate = "UPDATE cases SET $column_name = '$insert_alg' WHERE case_oll = $insert_oll AND case_cp = $insert_cp";
+    if (mysqli_query($conn, $sqlinsert)) {
+        echo "<a style=\"color:green;\">Successful</a>, you added: <br>". $i_alg . " (" . $i_oll . "-" . $i_cp . "-" . $i_ep . ")";
+    } else {
+      echo "<a style=\"color:red;\">Unnsuccesful</a>.<br>";
+      die("Failed to insert - " . $i_alg . " (" . $i_oll . "-" . $i_cp . "-" . $i_ep . ")<br><br> Error: " . mysqli_error($conn));
+    }
 
-      if (mysqli_query($db_conn, $sqlupdate))
-      {
-          echo "<a style=\"color:green;\">Successful</a>, you added: <br>". $insert_alg . " (" . $insert_oll . "-" . $insert_cp . "-" . $insert_ep . ")";
-      }
-        else
-      {
-        echo "<a style=\"color:red;\">Unnsuccesful</a>.<br>";
-        die("Failed to insert - " . $insert_alg . " (" . $insert_oll . "-" . $insert_cp . "-" . $insert_ep . ")<br><br> Error: " . mysqli_error($db_conn));
-      }
-
+    sleep(1);
+    header("location:javascript://history.go(-1)");
   ?>
 </body>

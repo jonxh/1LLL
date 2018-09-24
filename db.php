@@ -1,18 +1,14 @@
 <?php
-  $db_sn = "localhost";
-  $db_un = "root";
-  $db_pw = "";
-  $db_tn = "1lll";
+// Connection 1
+  $conn = mysqli_connect('localhost', 'root', '', '1lll');
 
-  $db_conn = new mysqli($db_sn, $db_un, $db_pw, $db_tn);
-
-  if ($db_conn->connect_error) {
-      die("Connection failed: " . $db_conn->connect_error);
+  if (!$conn) {
+      die("Connection failed: " . mysqli_connect_error());
   }
+// Connection 2
+  $conn2 = mysqli_connect('localhost', 'root', '', '1lll');
 
-  $db_conn2 = new mysqli($db_sn, $db_un, $db_pw, $db_tn);
-
-  if ($db_conn2->connect_error) {
-      die("Connection failed: " . $db_conn2->connect_error);
+  if (!$conn) {
+      die("Connection failed: " . mysqli_connect_error());
   }
 ?>
