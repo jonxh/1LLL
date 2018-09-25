@@ -5,8 +5,9 @@ Started 26.04.2018 03:17am.
 
 TODO:
 
-- Tidy up cpView code.
-- Add different epView layout for OLL (1, 21, 55, 56, 57 / 20, 58).
+- Add preview on alg site.
+- Tidy up cpView code. [x]
+- Add different epView layout for OLL (1, 21, 55, 56, 57 / 20, 58). [x]!
 - Improve insertion and deletion of algs.
 - Add administration for alg inserts.
 
