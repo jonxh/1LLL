@@ -5,6 +5,7 @@ Started 26.04.2018 03:17am.
 
 TODO:
 
+- Add random case feature.
 - Improve insertion and deletion of algs.
 - Add administration for alg inserts.
 
@@ -14,7 +15,7 @@ CHANGELOG:
 
 v3.3 - Too many updates (25.09.2018)
 
-- Add preview on alg site. Amazing [x]
+- Add preview on alg site. Amazing. [x]
 - Tidy up cpView code. [x]
 - Add different epView layout for OLL (1, 21, 55, 56, 57 / 20 and 58). [x]
 
