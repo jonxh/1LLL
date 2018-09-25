@@ -15,9 +15,9 @@ CHANGELOG:
 
 v3.3 - Too many updates (25.09.2018)
 
-- Add preview on alg site. Amazing. [x]
-- Tidy up cpView code. [x]
-- Add different epView layout for OLL (1, 21, 55, 56, 57 / 20 and 58). [x]
+- Add preview on alg site. Amazing.
+- Tidy up cpView code.
+- Add different epView layout for OLL (1, 21, 55, 56, 57 / 20 and 58).
 
 v3.2_1 - The actual v3.2 (24.09.2018)
 
