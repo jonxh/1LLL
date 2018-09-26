@@ -5,11 +5,13 @@ Started 26.04.2018 03:17am.
 
 TODO:
 
-- Add most recent algs function []
-- Edit alg function. []
+- Add most recent algs feature []
+- Edit alg function. [x]
+  - Improve this.. []
 - Add random case feature. [x]
 - Improve insertion and deletion of algs. []
 - Add administration for alg inserts. []
+  - Make deletes and edits go in a drop table, backups basically []
 
 ---
 
