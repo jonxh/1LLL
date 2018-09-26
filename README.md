@@ -5,6 +5,7 @@ Started 26.04.2018 03:17am.
 
 TODO:
 
+- Add most recent algs function []
 - Edit alg function. []
 - Add random case feature. [x]
 - Improve insertion and deletion of algs. []
