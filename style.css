@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Black+Ops+One');
 
+
 body {
   margin:auto;
   font-family: 'Open sans', sans-seriv;
   font-weight: 600;
   background-color:#eee;
-  overflow: scroll;
 }
 
 hr {
@@ -15,52 +15,68 @@ hr {
   background: #333;
 }
 
+/* Index */
+
 #header {
-  margin:auto;
-  padding:10px 10px 10px 10px;
-  text-align:center;
-  background-color: #003982;
-  background-image: url('visualcube/visualcube.php?fmt=svg&size=200&bg=t&case=FRUR3U3F3');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: top;
-  border-bottom:1px solid #aaa;
+  padding:5px 5px 5px 50px;
+  background-color: #0074D9;
+  border-bottom:2px solid #ccc;
 }
-  #header a:link, #header a:visited, #header a:hover, #header a:active {
-    padding:10px, 10px, 10px, 10px;
+  #header a, #header a:link, #header a:visited, #header a:hover, #header a:active {
     text-decoration: none;
     font-family: 'Black Ops One', cursive;
-    font-size: 60px;
-    color: black;
+    font-size: 80px;
+    color: #eee;
       -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: white;
+      -webkit-text-stroke-color: black;
   }
-
+#menubar {
+  display:inline;
+  padding-left: 20px;
+}
+ #menubar a, #menubar a:link, #menubar a:visited, #menubar a:hover, #menubar a:active {
+   text-decoration: none;
+   color:black;
+ }
 #content {
   padding:10px 10px 10px 10px;
   margin:auto;
   max-width:85%;
 }
 
-                /* Stuff */
+    /* OLL */
 
-.epTable, .epTable td {
-  min-width: 20px;
-  text-align: center;
-  vertical-align: middle;
-  border-bottom: 1px solid black;
-  border-collapse: collapse;
-}
-
-.ollcpTable {
+.ollTable {
   display: inline;
   text-align: center;
 }
-  .ollcpTabletd {
-    border: 1px solid black;
-    background-color: #e1e1e1;
+  .ollTable table {
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
-    .ollcpTabletd:active {background-color: #ccc;}
+    .ollTableBottom {
+      border: 1px solid black;
+      background-color: #e1e1e1;
+    }
+      .ollTableTop {
+        border: 1px solid black;
+        background-color: #e1e1e1;
+      }
+
+    /* All algs */
+
+.algsTable {
+  border-bottom: 1px solid black;
+}
+  .algsTableLeft {
+    width: 30px;
+  }
+    .algsTableRight {
+      text-align: center;
+      padding: 10px 10px 10px 10px;
+    }
+
+    /* Individual Alg */
 
 #algViewContent {
   text-align: center;
@@ -68,28 +84,76 @@ hr {
 
 .boxBox {
   margin:auto;
+  border-collapse: collapse;
 }
 .topBox {
-  border-bottom: 1px solid black;
+
 }
 .bottomBox {
-  border-bottom: 1px solid black;
 }
 .leftBox {
   height:20px;
   width:30px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
 }
-.midBox input {
-  height:25px;
-  width:300px;
+.rightBox {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+.midBox {
+  padding-left: 10px;
+  padding-right: 10px;
+  min-width: 200px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+.addText {
+  display: inline-block;
+  width: 300px;
+  height: 35px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  padding: 5px 10px 5px 10px;
+}
+.addButton {
+  outline: none;
+  box-sizing: border-box;
+  position: relative;
+  top: 5px;
+  border:none;
+  background-color: inherit;
+}
+.editButton {
+  outline: none;
+  border:none;
+  display: inline-block;
+  background-color: inherit;
+  color:black;
+  decoration:none;
+}
+  .editButton i, .editButton i:hover, .addButton i:hover, .deleteButton i:hover {
+    font-size: 185%;
+    position: relative;
+    color:black;
+    decoration:none;
   }
-.rightBox input {
-  height:30px;
-  width:30px;
-  display: block;
-  border-radius: 2px;
-  border: 1px solid black;
+    .editButton i:active, .addButton i:active, .deleteButton i:active {
+      font-size: 200%;
+    }
+.deleteButton {
+  outline: none;
+  border:none;
+  display: inline-block;
+  background-color: inherit;
 }
-  .rightBox input:hover {
-    background-color: rgba(0, 0 ,0 ,0.5);
+#algEditor {
+}
+  #algEditor table {
+    margin:auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
   }

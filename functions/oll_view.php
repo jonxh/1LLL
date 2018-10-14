@@ -1,17 +1,22 @@
 <?php
   function ollView() {
-    function ollT($ollCount) {
+    function ollT($ollx) {
       include "db.php";
 
-        $sql = "SELECT * FROM oll_view WHERE oll_id = $ollCount";
+        $sql = "SELECT * FROM viewoll WHERE view_id = $ollx+6";
         $qry = mysqli_query($conn,$sql) or die("Error: " . mysqli_error($conn));
-        $row = mysqli_fetch_array($qry);?>
+        $row = mysqli_fetch_array($qry);
+?>
 
-      <table class="ollcpTable"><tr>
-        <td><?php echo $ollCount; ?></td></tr><tr>
-        <td class="ollcpTabletd"><a href="index.php?p=menu&oll=<?php echo $row[0]; ?>">
-        <img src="visualcube/visualcube.php?fmt=svg&stage=oll&size=100&bg=t&view=plan&case=<?php echo $row[1]; ?>"></a></td></tr>
-      </table><?php
+      <table class="ollTable">
+        <tr>
+          <td class="ollTableTop"><?php echo $ollx; ?></td></tr><tr>
+          <td class="ollTableBottom"><a href="index.php?p=1lll&oll=<?php echo $ollx; ?>">
+          <img src="visualcube/visualcube.php?fmt=svg&stage=oll&size=100&view=plan&bg=t&alg=<?php echo $row['view_alg']; ?>"></a></td>
+        </tr>
+      </table>
+
+<?php
     }
       $a=1;
     while ($a <= 58) {

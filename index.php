@@ -15,7 +15,11 @@
   </head>
   <body>
     <div id="header">
-      <a href="index.php">ONE3L</a>
+      <a href="index.php">1LLL</a>
+      <div id="menubar">
+        <a href="index.php"><i class="material-icons"style="font-size: 30px;position: relative; top: 5px; left: 0px;">grid_on</i></a>
+        <a href="index.php?p=info"><i class="material-icons"style="font-size: 30px;;position: relative; top: 5px; left: 0px;">info</i></a>
+      </div>
     </div>
     <div id="content">
       <?php
@@ -32,7 +36,7 @@
   				}
   			} else {
   				$pages_dir= 'pages';
-  				include ($pages_dir .'/menu.inc.php');
+  				include ($pages_dir .'/1lll.inc.php');
   			}
   		?>
     <div>
